@@ -1,17 +1,24 @@
 # docker-ansible
 
-Dockerized Ansible based on Alpine linux
+Dockerized Ansible based on Alpine linux, 3.10.1
+
+## Components
+
+- Alpine, 3.10.1
+- Ansible, 2.8.2
 
 ## Build
 
 To build latest Ansible version
 ```sh
-$ make ansible-latest
+make build
 ```
 
-To build specific Ansible version
+## Console
+
+To run console with Ansible
 ```sh
-$ make ansible-2.3.1.0
+make console
 ```
 
 

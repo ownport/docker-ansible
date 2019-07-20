@@ -1,12 +1,12 @@
-FROM alpine:3.6
+FROM alpine:3.10.1
 
-ARG ANSIBLE_VERSION
+ENV ANSIBLE_VERSION="2.8.2"
 
-RUN apk --update add python py-pip openssl ca-certificates && \
+RUN apk --update add python3 py3-pip openssl ca-certificates && \
     apk --update add --virtual build-deps \
-        python-dev libffi-dev openssl-dev build-base && \
-    pip install --upgrade pip cffi && \
-    pip install ansible${ANSIBLE_VERSION} && \
+        python3-dev libffi-dev openssl-dev build-base && \
+    pip3 install --upgrade pip cffi && \
+    pip3 install ansible==${ANSIBLE_VERSION} && \
     apk del build-deps && \
     rm -rf /var/cache/apk*
 
